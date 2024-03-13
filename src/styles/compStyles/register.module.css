@@ -1,0 +1,6 @@
+.inputStyle {
+  @apply block w-full input input-bordered border-2 border-cw-tertiary outline-none font-cookWiz focus:outline-none focus:border-cw-background duration-300;
+}
+.buttonStyle {
+  @apply btn-md block w-full bg-cw-tertiary rounded-md hover:bg-cw-background duration-300 text-cw-background hover:text-white font-cookWiz text-xl;
+}
