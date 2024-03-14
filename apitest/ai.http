@@ -1,5 +1,0 @@
-POST http://localhost:3000/api/v1/ai
-
-{
-    "prompt" : "generate indonesia food recipe with following ingredients: chicken, egg, rice. make in indonesia recipe with only ingridients that i have. the output is in indonesia language. which have a name of the food, description of the food, ingridients of the food, and the steps of how to make the food "
-}  
