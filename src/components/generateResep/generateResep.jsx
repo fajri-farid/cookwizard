@@ -18,7 +18,6 @@ export const GenerateResep = () => {
 
     const { data } = await res.json();
     const GeneratedOutput = JSON.parse(data.choices[0].message.content);
-    // console.log(GeneratedOutput);
     setResep(GeneratedOutput);
     setShowResepDetails(true);
     setLoading(false);
