@@ -88,18 +88,25 @@ export const Register = () => {
               onChange={handleChangeInput}
               className={registerStyle.inputStyle}
             />
-            <button
-              className={registerStyle.buttonStyle}
-              onClick={handleRegister}
-            >
-              Register
-            </button>
+            <div className="w-fit m-auto">
+              <button
+                className={registerStyle.buttonStyle}
+                onClick={handleRegister}
+              >
+                Register
+              </button>
+            </div>
           </div>
-          <div>
+          <div className="mt-5">
             <div className="font-cookWiz">
               Have an account ?{" "}
               <Link href="/login" className="link font-cookWiz">
                 <span className="font-cookWiz">Login</span>
+              </Link>
+            </div>
+            <div className="w-fit m-auto mt-10 font-cookWiz">
+              <Link href="/" className="link">
+                Back to Home
               </Link>
             </div>
           </div>

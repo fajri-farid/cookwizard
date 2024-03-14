@@ -6,6 +6,7 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: { scbreakpoint: "1450px" },
     extend: {
       fontFamily: {
         cookWiz: ["cookWiz", "cursive"],
