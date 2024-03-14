@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "cookWiz";
-  src: url(/public/font/BoldLining.ttf);
-}
