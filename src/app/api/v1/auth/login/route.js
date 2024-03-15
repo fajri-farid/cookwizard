@@ -43,7 +43,7 @@ export async function POST(req) {
     };
 
     // Buat token
-    const token = sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" }); //1d disini itu berapa lama tokennya akan expired, disini 1 hari
+    const token = sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" }); //30 day disini itu berapa lama tokennya akan expired, disini 30 hari
     const res = NextResponse.json(
       { data: payload, message: "Login succesfully" },
       { status: 200 }

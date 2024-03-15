@@ -31,10 +31,10 @@ model Users{
 
 model Posts {
   id String @id @default(cuid())
-  titleDish String
+  dishTitle String
   desc String
-  bahan String
-  steps String
+  ingredients String
+  recipe String
 
   // connecting: menghubungkan author_id yang ada di Posts dengan id yang ada di Users
   // declaration: Author ID = kolom untuk relasi
