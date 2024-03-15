@@ -1,1 +1,6 @@
-GET  http://localhost:3001/api/v1/post
+# DELETE http://localhost:3001/api/v1/post/_85y0WFEKp2szy75pMbN4
+
+GET http://localhost:3001/api/v1/post
+
+ 
+
