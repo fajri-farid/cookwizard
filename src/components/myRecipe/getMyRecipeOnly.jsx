@@ -27,12 +27,21 @@ export const MyRecipeComponent = () => {
 
   return (
     <div>
-      <h2>My Recipes</h2>
       <ul>
         {recipes.map((recipe) => (
           <li key={recipe.id}>
-            <h3>{recipe.dishTitle}</h3>
-            <p>{recipe.desc}</p>
+            <div className="pt-10">
+              <h2 className="font-bold text-xl">{recipe.dishTitle}</h2>
+              <p>{recipe.desc}</p>
+              <p className="mt-2">Bahan:</p>
+              {recipe.ingredients.split("\n").map((ingredient, index) => (
+                <p key={index}>{ingredient}</p>
+              ))}
+              <p className="mt-2">Tahapan:</p>
+              {recipe.recipe.split("\n").map((step, index) => (
+                <p key={index}>{step}</p>
+              ))}
+            </div>
           </li>
         ))}
       </ul>
