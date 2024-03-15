@@ -18,7 +18,7 @@ export const GenerateResep = () => {
 
     const res = await fetch("api/v1/ai", {
       method: "POST",
-      body: JSON.stringify({ bahan }),
+      body: JSON.stringify({ bahan, author_id }),
     });
 
     const { data } = await res.json();
@@ -36,20 +36,38 @@ export const GenerateResep = () => {
   }
 
   async function handleSave() {
+    // Pastikan resep tidak kosong
+    if (!resep) {
+      console.error("Tidak ada resep yang tersedia untuk disimpan");
+      return;
+    }
+
+    // Ambil id pengguna dari localStorage
+    const user = JSON.parse(localStorage.getItem("user"));
+    const author_id = user.id;
+
+    // Tambahkan author_id ke objek resep
+    const resepWithAuthorId = { ...resep, author_id };
+
+    // Atur loading menjadi true
     setLoading(true);
-    await sendResepToDatabase(resep);
+
+    // Kirim resep ke database
+    await sendResepToDatabase(resepWithAuthorId);
   }
 
   async function sendResepToDatabase(resep) {
     try {
+      // Kirim permintaan POST ke backend dengan body berisi resep
       const res = await fetch("api/v1/post", {
         method: "POST",
-        body: JSON.stringify(resep),
+        body: JSON.stringify(resep), // Sertakan resep dengan author_id
         headers: {
           "Content-Type": "application/json",
         },
       });
 
+      // Periksa status respons
       if (res.ok) {
         console.log("Resep berhasil disimpan ke database");
       } else {
