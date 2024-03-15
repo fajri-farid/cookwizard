@@ -2,6 +2,19 @@ import prisma from "@/utils/prisma";
 import { nanoid } from "nanoid";
 import { NextResponse } from "next/server";
 
+export async function GET(req) {
+  try {
+    const allPosts = await prisma.posts.findMany();
+    return NextResponse.json({ data: allPosts }, { status: 200 });
+  } catch (error) {
+    console.error("Error fetching all posts:", error);
+    return NextResponse.json(
+      { errorMessage: "Failed to fetch all posts" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(req) {
   const { dishTitle, desc, ingredients, recipe, author_id } = await req.json();
   const id = nanoid();
