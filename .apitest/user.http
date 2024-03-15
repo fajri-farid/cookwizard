@@ -1,1 +1,4 @@
-GET  http://localhost:3001/api/v1/user
+GET  http://localhost:3001/api/v1/user?id=cltssdm2s0000yetb62rarbkc
+
+
+# GET  http://localhost:3001/api/v1/user?id=cltssdm2s0000yetb62rarbkc
