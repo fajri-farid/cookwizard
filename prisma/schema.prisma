@@ -22,4 +22,34 @@ model Users{
   password String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  avatar String?
+  deskripsi String?
+
+  posts Posts[]
+  markah Markah[]
+}
+
+model Posts {
+  id String @id @default(cuid())
+  titleDish String
+  desc String
+  bahan String
+  steps String
+
+  // connecting: menghubungkan author_id yang ada di Posts dengan id yang ada di Users
+  // declaration: Author ID = kolom untuk relasi
+  // referensi: mengacu pada tabel tujuan dan kolom tujuan
+  author_id String
+  author Users @relation(fields: [author_id], references: [id])
+
+  markah Markah[]
+}
+
+model Markah {
+  id String @id @default(cuid())
+  user_id String
+  resep_id String
+
+  user Users @relation(fields: [user_id], references: [id])
+  post Posts @relation(fields: [resep_id], references: [id])
 }
