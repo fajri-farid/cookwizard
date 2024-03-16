@@ -1,1 +1,10 @@
-GET  http://localhost:3001/api/v1/user
+# GET  http://localhost:3001/api/v1/user?id=cltssdm2s0000yetb62rarbkc
+
+
+# GET  http://localhost:3001/api/v1/user?id=cltssdm2s0000yetb62rarbkc
+
+PATCH  http://localhost:3001/api/v1/user/clto6iev9000042m74pus29i6
+
+{
+    "username" : "kina"
+}
