@@ -9,7 +9,7 @@ module.exports = {
     screens: { scbreakpoint: "1450px" },
     extend: {
       fontFamily: {
-        cookWiz: ["cookWiz", "cursive"],
+        cookWiz: ["cookwiz"],
       },
       colors: {
         "cw-background": "#261F1D",
