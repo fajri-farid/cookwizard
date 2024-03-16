@@ -21,7 +21,7 @@ export async function PATCH(req, { params }) {
 
     return NextResponse.json(
       {
-        message: "User updated successfully",
+        message: "User updated successfully", // Pastikan pesan ini selalu dikirim kembali
         data: updatedUser,
       },
       { status: 200 }

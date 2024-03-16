@@ -38,7 +38,8 @@ export const GetUserData = () => {
       });
       const updatedData = await response.json();
       setUserData(updatedData.data);
-      setEditing(false); // Keluar dari mode pengeditan setelah berhasil mengirimkan permintaan PATCH
+      setEditing(false);
+      console.log("berhasil update!"); // Keluar dari mode pengeditan setelah berhasil mengirimkan permintaan PATCH
     } catch (error) {
       console.error("Error updating user data:", error);
     }
