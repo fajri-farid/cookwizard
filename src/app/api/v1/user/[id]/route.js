@@ -1,5 +1,7 @@
 import prisma from "@/utils/prisma";
+import { uploadFile } from "@/lib/uploadFile";
 import { NextResponse } from "next/server";
+import slugify from "slugify";
 
 export async function PATCH(req, { params }) {
   const userId = params.id;
@@ -19,9 +21,33 @@ export async function PATCH(req, { params }) {
       },
     });
 
+    // Upload image
+    try {
+      // satu gambar
+      if (avatar) {
+        await uploadFile({
+          Body: avatar,
+          Key: avatar.name,
+          ContentType: avatar.type,
+          Dir: `avatar/${userId}`, // Gunakan userId yang didapat dari params.id;
+        });
+        console.log("berhasil di masukkan");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+    console.log({
+      firstName,
+      lastName,
+      username,
+      deskripsi,
+      avatar,
+    });
+
     return NextResponse.json(
       {
-        message: "User updated successfully", 
+        message: "User updated successfully",
         data: updatedUser,
       },
       { status: 200 }

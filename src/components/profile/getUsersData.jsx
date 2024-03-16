@@ -5,9 +5,18 @@ export const GetUserData = () => {
   const [userData, setUserData] = useState(null);
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState({});
+  const [avatarPreview, setAvatarPreview] = useState(null); // karena satu gambar doang!
   useEffect(() => {
     fetchData();
   }, []);
+
+  // untuk file hanya satu
+  function createAvatarPreview(file) {
+    if (file) {
+      const objectUrl = URL.createObjectURL(file); // convert dari binary ke temporary preview
+      setAvatarPreview(objectUrl);
+    }
+  }
 
   async function fetchData() {
     try {
@@ -48,6 +57,20 @@ export const GetUserData = () => {
     setFormData({ ...formData, [name]: value });
   }
 
+  async function handleSubmit(event) {
+    event.preventDefault(); // Mencegah pengiriman formulir secara default
+
+    const formData = new FormData(event.target); // Membuat objek FormData dari formulir
+
+    // Memasukkan file-file yang diunggah ke dalam FormData
+    formData.append("avatar", event.target.elements.avatar.files[0]);
+    for (const file of event.target.elements.productImages.files) {
+      formData.append("productImages", file);
+    }
+
+    await handleSubmitProduct(formData); // Mengirimkan data formulir ke server
+  }
+
   return (
     <div>
       {/* Memeriksa apakah userData bukan null */}
@@ -61,9 +84,7 @@ export const GetUserData = () => {
                 className="w-full h-full object-cover"
               />
             ) : (
-              <span className="text-gray-500 text-sm text-center">
-                No avatar
-              </span>
+              <span className="text-gray-500 text-sm left-2">No avatar</span>
             )}
           </div>
           <p className="font-bold text-2xl">
@@ -90,7 +111,10 @@ export const GetUserData = () => {
           {editing ? (
             <div>
               {/* Form untuk mengedit profil */}
-              <form className="flex flex-col items-start w-full">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col items-start w-full"
+              >
                 <div className="flex flex-col w-full my-2">
                   <label className="text-sm">First Name</label>
                   <input
@@ -125,6 +149,25 @@ export const GetUserData = () => {
                     placeholder="Username"
                     className="border border-gray-300 rounded-md p-2 w-full mt-1"
                   />
+                </div>
+
+                <div>
+                  <label>Avatar</label>
+                  <input
+                    name="avatar"
+                    type="file"
+                    className="file-input file-input-bordered"
+                    onChange={
+                      (event) => createAvatarPreview(event.target.files[0]) // index 0 karena kan dia satu aja
+                    }
+                  />
+                  {avatarPreview ? (
+                    <img
+                      alt="avatar"
+                      src={avatarPreview}
+                      className="w-[150px] h-[150px] flex items-center justify-center text-center rounded-full"
+                    />
+                  ) : null}
                 </div>
 
                 <div className="flex flex-col w-full my-2">
