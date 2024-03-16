@@ -1,12 +1,11 @@
 import prisma from "@/utils/prisma";
 import { uploadFile } from "@/lib/uploadFile";
 import { NextResponse } from "next/server";
-import slugify from "slugify";
 
 export async function PATCH(req, { params }) {
   const userId = params.id;
   const { firstName, lastName, username, avatar, deskripsi } = await req.json();
-
+    
   try {
     const updatedUser = await prisma.users.update({
       where: {
@@ -20,7 +19,7 @@ export async function PATCH(req, { params }) {
         avatar,
       },
     });
-
+    
     // Upload image
     try {
       // satu gambar
