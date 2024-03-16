@@ -27,13 +27,51 @@ export const GetUserData = () => {
     fetchData();
   }, []);
 
+  //   const joinedDate = new Date(userData.createdAt).toLocaleDateString("id-ID", {
+  //     day: "numeric",
+  //     month: "long",
+  //     year: "numeric",
+  //   });
+
   return (
     <div>
-      <h1>Hello</h1>
       {/* Memeriksa apakah userData bukan null */}
       {userData ? (
-        <div className="pt-10">
-          <h2 className="font-bold text-xl">{userData.id}</h2>
+        <div className="pt-10 flex flex-col items-center h-screen">
+          <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full bg-gray-300 overflow-hidden">
+            {userData.avatar ? (
+              <img
+                src={userData.avatar}
+                alt="Avatar"
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <span className="text-gray-500 text-sm text-center">
+                No avatar
+              </span>
+            )}
+          </div>
+          {/* <h2 className="font-bold text-xl">{userData.id}</h2> */}
+          <p className="font-bold text-2xl">
+            {userData.firstName} {userData.lastName}
+          </p>
+          <p className="font-semibold text-xl">{userData.username}</p>
+          {/* Menampilkan tanggal gabungan jika tersedia */}
+          {userData.createdAt && (
+            <p className="text-sm">
+              joined{" "}
+              {new Date(userData.createdAt).toLocaleDateString("id-ID", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </p>
+          )}
+          <p className="text-md">
+            {userData.deskripsi
+              ? userData.deskripsi
+              : `Welcome to cookwizard ${userData.username}!`}
+          </p>
         </div>
       ) : (
         <div className="pt-10">
