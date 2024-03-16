@@ -5,11 +5,11 @@ export const AuthLayout = ({ children }) => {
     <main>
       <div>
         <div>{children}</div>
-        <div className="flex justify-center p-3">
+        {/* <div className="flex justify-center p-3">
           <Link href="/" className="link">
             Back to Home
           </Link>
-        </div>
+        </div> */}
       </div>
     </main>
   );
