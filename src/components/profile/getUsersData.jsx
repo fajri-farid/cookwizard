@@ -51,59 +51,24 @@ export const GetUserData = () => {
     }
   }
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    const formDataToSend = new FormData();
-    formDataToSend.append(
-      "firstName",
-      formData.firstName || userData.firstName
-    );
-    formDataToSend.append("lastName", formData.lastName || userData.lastName);
-    formDataToSend.append("username", formData.username || userData.username);
-    formDataToSend.append(
-      "deskripsi",
-      formData.deskripsi || userData.deskripsi
-    );
-
-    // Periksa apakah avatar dipilih
-    if (formData.avatar) {
-      formDataToSend.append("avatar", formData.avatar);
-    } else {
-      // Jika tidak ada avatar yang dipilih, atur nilai formData.avatar menjadi null
-      formDataToSend.append("avatar", null);
-    }
-
-    try {
-      const response = await fetch(`/api/v1/user/${userData.id}`, {
-        method: "PATCH",
-        body: formDataToSend,
-      });
-
-      if (response.ok) {
-        const updatedData = await response.json();
-        setUserData(updatedData.data);
-        setEditing(false);
-        console.log("User updated successfully!");
-      } else {
-        console.error("Failed to update user.");
-      }
-    } catch (error) {
-      console.error("Error updating user data:", error);
-    }
-  }
-
   // Fungsi menangani perubahan input
   function handleInputChange(event) {
-    const { name, value, files } = event.target;
-    // Jika ada file yang dipilih, simpan ke state formData
-    if (files && files[0]) {
-      createAvatarPreview(files[0]); // Buat preview avatar
-      setFormData({ ...formData, avatar: files[0] });
-    } else {
-      // Jika tidak ada file yang dipilih, simpan nilai input
-      setFormData({ ...formData, [name]: value });
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault(); // Mencegah pengiriman formulir secara default
+
+    const formData = new FormData(event.target); // Membuat objek FormData dari formulir
+
+    // Memasukkan file-file yang diunggah ke dalam FormData
+    formData.append("avatar", event.target.elements.avatar.files[0]);
+    for (const file of event.target.elements.productImages.files) {
+      formData.append("productImages", file);
     }
+
+    await handleSubmitProduct(formData); // Mengirimkan data formulir ke server
   }
 
   return (
@@ -119,9 +84,7 @@ export const GetUserData = () => {
                 className="w-full h-full object-cover"
               />
             ) : (
-              <span className="text-gray-500 text-sm text-center">
-                No avatar
-              </span>
+              <span className="text-gray-500 text-sm left-2">No avatar</span>
             )}
           </div>
           <p className="font-bold text-2xl">
@@ -194,13 +157,9 @@ export const GetUserData = () => {
                     name="avatar"
                     type="file"
                     className="file-input file-input-bordered"
-                    onChange={(event) => {
-                      createAvatarPreview(event.target.files[0]); // Buat preview avatar
-                      setFormData({
-                        ...formData,
-                        avatar: event.target.files[0],
-                      }); // Set file dalam formData
-                    }}
+                    onChange={
+                      (event) => createAvatarPreview(event.target.files[0]) // index 0 karena kan dia satu aja
+                    }
                   />
                   {avatarPreview ? (
                     <img
