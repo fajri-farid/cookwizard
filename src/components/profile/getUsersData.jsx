@@ -37,7 +37,7 @@ export const GetUserData = () => {
     <div>
       {/* Memeriksa apakah userData bukan null */}
       {userData ? (
-        <div className="pt-10 flex flex-col items-center h-screen">
+        <div className="pt-10 flex flex-col items-center">
           <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full bg-gray-300 overflow-hidden">
             {userData.avatar ? (
               <img
@@ -72,6 +72,7 @@ export const GetUserData = () => {
               ? userData.deskripsi
               : `Welcome to cookwizard ${userData.username}!`}
           </p>
+          <div className="border border-black my-10  min-h-1 w-full bg-black max-w-[95vh]"></div>
         </div>
       ) : (
         <div className="pt-10">

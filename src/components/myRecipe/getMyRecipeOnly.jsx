@@ -29,7 +29,7 @@ export const MyRecipeComponent = () => {
     <div>
       <ul>
         {recipes.map((recipe) => (
-          <li key={recipe.id}>
+          <li key={recipe.id} className="ml-[100px]">
             <div className="pt-10">
               <h2 className="font-bold text-xl">{recipe.dishTitle}</h2>
               <p>{recipe.desc}</p>
