@@ -1,10 +1,10 @@
 .inputStyle {
-  @apply block w-full input input-bordered border-2 border-cw-tertiary outline-none font-cookWiz focus:outline-none focus:border-cw-background duration-300;
+  @apply block w-full input input-bordered border-2 border-cw-tertiary outline-none font-cookWiz text-[40px] focus:outline-none focus:border-cw-background duration-300;
 }
 .buttonStyle {
-  @apply relative z-0 flex items-center justify-center gap-2 overflow-hidden rounded-md border-[2px] w-[485px] 
+  @apply relative z-0 flex items-center justify-center gap-2 overflow-hidden rounded-md border-[2px] w-[485px] h-[50px] 
 
- border-[#C4C4C4] hover:border-cw-background bg-[#C4C4C4] px-4 py-2 font-cookWiz
+ border-[#C4C4C4] hover:border-cw-background bg-[#C4C4C4] px-4 py-2 font-cookWiz text-5xl
  text-cw-background transition-all duration-500
 
   
@@ -30,5 +30,3 @@
 
   active:scale-95;
 }
-
-/* he */
