@@ -2,31 +2,28 @@
 import React, { useState, useEffect } from "react";
 
 export const GetUserData = () => {
-  const [userData, setUserData] = useState(null); // Mengubah initial state menjadi null
-  const [editing, setEditing] = useState(false); // State untuk menentukan apakah pengguna sedang dalam mode pengeditan
-  const [formData, setFormData] = useState({}); // State untuk menyimpan data yang akan diubah
+  const [userData, setUserData] = useState(null);
+  const [editing, setEditing] = useState(false);
+  const [formData, setFormData] = useState({});
   useEffect(() => {
     fetchData();
   }, []);
 
   async function fetchData() {
     try {
-      // Mengambil user dari local storage
       const user = JSON.parse(localStorage.getItem("user"));
       const id = user.id;
 
-      // Membuat permintaan dengan id yang diperoleh dari local storage
       const response = await fetch(`/api/v1/user?id=${id}`);
       const data = await response.json();
 
-      // Mengatur data pengguna ke state userData
       setUserData(data.data);
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
   }
 
-  // Fungsi untuk mengirimkan permintaan PATCH ke server
+  // fungsi edit
   async function updateUser() {
     try {
       const response = await fetch(`/api/v1/user/${userData.id}`, {
@@ -39,13 +36,13 @@ export const GetUserData = () => {
       const updatedData = await response.json();
       setUserData(updatedData.data);
       setEditing(false);
-      console.log("berhasil update!"); // Keluar dari mode pengeditan setelah berhasil mengirimkan permintaan PATCH
+      console.log("berhasil update!");
     } catch (error) {
       console.error("Error updating user data:", error);
     }
   }
 
-  // Fungsi untuk menangani perubahan input
+  // Fungsi menangani perubahan input
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -90,7 +87,6 @@ export const GetUserData = () => {
               : `Welcome to cookwizard ${userData.username}!`}
           </p>
           {/* EDIT START */}
-          {/* Tombol untuk masuk atau keluar dari mode pengeditan */}
           {editing ? (
             <div>
               {/* Form untuk mengedit profil */}
