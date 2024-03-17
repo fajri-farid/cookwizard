@@ -30,19 +30,20 @@ export const Login = () => {
       body: JSON.stringify(loginData),
     });
 
-    const data = await res.json();
-    console.log(data);
-    // if (res.status === 401 || res.status === 404) {
-    //   const { errorMessage } = await res.json();
-    //   toast.error(errorMessage);
-    //   return;
-    // }
+    // const data = await res.json();
 
-    // const { data, message } = await res.json();
-    // localStorage.setItem("user", JSON.stringify(data));
+    if (res.status === 401 || res.status === 404) {
+      const { errorMessage } = await res.json();
+      toast.error(errorMessage);
+      return;
+    }
+
+    const { data, message } = await res.json();
+    localStorage.setItem("user", JSON.stringify(data));
     // toast.success(message);
     // router.push("/");
     // window.location.replace(siteUrl);
+    console.log(data);
   }
 
   return (
