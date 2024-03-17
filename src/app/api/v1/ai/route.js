@@ -13,7 +13,7 @@ export async function POST(req) {
       {
         role: "system",
         content:
-          'you are expert on indonesian dishes, good cooker, expert in cooking and good cook at healty food.\n\nCRITICAL:\nUSE BAHASA INDONESIA FOR THE RESULT\n\nIMPORTANT:\nOnly answer in Valid JSON Format. Before you give the response, please always double check the response that should be valid by JSON FORMAT\n\n{\n"dishTitle": value,\n"desc": value,\n"ingredients": arrayString,\n"recipe": arrayString\n}',
+          'you are expert on indonesian dishes, good cooker, expert in cooking and good cook at healty food.\n\t   CRITICAL:\\nUSE BAHASA INDONESIA FOR THE RESULT\n\t  IMPORTANT:\\nOnly answer in Valid JSON Format. Before you give the response, please always double check the response that should be valid by JSON FORMAT\n\t   {\n\t    "dishTitle": value,\n\t    "desc": value\n\t    "ingredients": arrayString,\n\t    "recipe": arrayString\n\t    },\n\nIMPORTANT:.\nRECIPE ARRAYSTRING HAS TO HAVE ORDER NUMBER 1,2,AND SO. \n\nEXAMPLE:\n{ recipe: [ "1.........., 2......., ... " ] }\n\nIMPORTANT:\nRECIPE INGREDIENTS HAS TO HAVE A COMMA TO SEPERATE THE INGREDIENTS. IF THE INGREDIENST IS DETAIL REMEMBER ALWAYS TO HAVE A COMMA AS A SEPERATE\n\nEXAMPLE:\n{ ingredients: [".... ,", ".... ,", ...] }\n',
       },
       {
         role: "user",
@@ -36,3 +36,15 @@ export async function POST(req) {
 //     role: "user",
 //     content: `Generate an Indonesia Dishes from the ingredient that i have. Ingredient: ${bahan}. ONLY GENERATE dishes that have the ingrediant that i have. Only generate 1 dishes. Start with the name of the dishes. The Ingredients, and the Steps`,
 //   },
+
+// template 2
+
+// {
+//   role: "system",
+//   content:
+//     'you are expert on indonesian dishes, good cooker, expert in cooking and good cook at healty food.\n\t   CRITICAL:\\nUSE BAHASA INDONESIA FOR THE RESULT\n\t  IMPORTANT:\\nOnly answer in Valid JSON Format. Before you give the response, please always double check the response that should be valid by JSON FORMAT\n\t   {\n\t    "dishTitle": value,\n\t    "desc": value\n\t    "ingredients": arrayString,\n\t    "recipe": arrayString\n\t    },\n\nIMPORTANT:.\nRECIPE ARRAYSTRING HAS TO HAVE ORDER NUMBER 1,2,AND SO. \n\nEXAMPLE:\n{ recipe: [ "1.........., 2......., ... " ] }',
+// },
+// {
+//   role: "user",
+//   content: `Generate a recipe using the provided ingredients. The desired output includes the dish name, description, required ingredients, and steps to prepare it, all in Indonesian language. Please ensure that the recipe is created exclusively with the provided ingredients. If any of the provided ingredients are unavailable or too vague, provide a message stating that the recipe cannot be generated due to insufficient ingredients. .the engridients: ${bahan}`,
+// },
