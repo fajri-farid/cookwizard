@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 //Styles
-import registerStyle from "@/styles/compStyles/register.module.css";
+import registerStyle from "@/styles/compStyles/auth.module.css";
 import { Footer } from "../sharedUI/Footer";
 
 export const Register = () => {
@@ -41,15 +41,14 @@ export const Register = () => {
 
   return (
     <main>
-      {/* <div className="font-medium tracking-tight text-base">CookWizard.</div> */}
       <div>
         <div className="w-fit flex space-x-32">
           <div>
             <img src="/auth/img_register.png" alt="" className="w-[950px] " />
           </div>
-          <div className="w-[970px]">
-            <div className="w-fit m-auto mt-32">
-              <div className="mt-10 mb-5">
+          <div className="w-[970px] flex align-middle">
+            <div className="w-fit m-auto">
+              <div className="mb-5">
                 <div className="font-cookWiz text-cw-background text-8xl">
                   Register
                 </div>
@@ -57,7 +56,7 @@ export const Register = () => {
                   Create an account for CookWizard.
                 </div>
               </div>
-              <div className="space-y-5">
+              <div className="space-y-10">
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     name="firstName"

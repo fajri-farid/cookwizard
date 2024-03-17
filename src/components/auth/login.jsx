@@ -6,6 +6,9 @@ import { toast } from "react-toast";
 import { useState } from "react";
 import { siteUrl } from "@/config/siteUrl";
 
+//Style
+import loginStyle from "@/styles/compStyles/auth.module.css";
+
 export const Login = () => {
   const router = useRouter();
   const [loginData, setLoginData] = useState({
@@ -47,39 +50,60 @@ export const Login = () => {
   }
 
   return (
-    <main className="space-y-6 px-[20vh] pt-10">
-      <div className="font-medium tracking-tight text-base">Digicommerce.</div>
-      <div className="">
-        <h1>Login</h1>
-        <p>Welcome back!</p>
-      </div>
-      <div className="space-y-3">
-        <input
-          name="email"
-          placeholder="email@domain.com"
-          onChange={handleChangeInput}
-          className="block w-full input input-bordered"
-        />
-        <input
-          name="password"
-          placeholder="password"
-          type="password"
-          onChange={handleChangeInput}
-          className="block w-full input input-bordered"
-        />
-        <button
-          onClick={handleLogin}
-          className="btn-md block w-full btn btn-primary"
-        >
-          Login
-        </button>
-      </div>
-      <div>
+    <main>
+      <div className="w-fit flex space-x-32">
         <div>
-          Don&apos;t have an account ?{" "}
-          <Link href="/register" className="link">
-            <span>Register</span>
-          </Link>
+          <img src="/auth/img_login.png" alt="" className="w-[950px] " />
+        </div>
+        <div className="w-[970px] flex align-middle">
+          <div className="w-fit m-auto space-y-5">
+            <div>
+              <h1 className="font-cookWiz text-cw-background text-8xl">
+                Login
+              </h1>
+            </div>
+            <div className="space-y-10">
+              <div>
+                <div className="font-cookWiz text-cw-background text-6xl -mt-5">
+                  Email Address
+                </div>
+                <input
+                  name="email"
+                  placeholder="email@domain.com"
+                  onChange={handleChangeInput}
+                  className={loginStyle.loginInputStyle}
+                />
+              </div>
+              <div>
+                <div className="font-cookWiz text-cw-background text-6xl -mt-5">
+                  Password
+                </div>
+                <input
+                  name="password"
+                  placeholder="password"
+                  type="password"
+                  onChange={handleChangeInput}
+                  className={loginStyle.loginInputStyle}
+                />
+              </div>
+              <div className="w-fit m-auto">
+                <button
+                  onClick={handleLogin}
+                  className={loginStyle.buttonStyle}
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+            <div>
+              <div className="font-cookWiz text-5xl">
+                Don&apos;t have an account ?{" "}
+                <Link href="/register" className="link">
+                  <span>Register</span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
