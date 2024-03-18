@@ -45,20 +45,20 @@ export const Login = () => {
     localStorage.setItem("user", JSON.stringify(data));
     // toast.success(message);
     // router.push("/");
-    // window.location.replace(siteUrl);
+    window.location.replace(siteUrl);
     console.log(data);
   }
 
   return (
     <main>
-      <div className="w-fit flex space-x-32">
+      <div className="w-fit flex space-x-32 space-y-[100px]">
         <div>
-          <img src="/auth/img_login.png" alt="" className="w-[950px] " />
+          <img src="/auth/img_login.png" alt="" className="w-[1300px] " />
         </div>
-        <div className="w-[970px] flex align-middle">
+        <div className="w-[1000px] flex align-middle">
           <div className="w-fit m-auto space-y-5">
             <div>
-              <h1 className="font-cookWiz text-cw-background text-8xl">
+              <h1 className="font-cookWiz text-cw-background text-8xl -mt-10">
                 Login
               </h1>
             </div>
@@ -83,7 +83,7 @@ export const Login = () => {
                   placeholder="password"
                   type="password"
                   onChange={handleChangeInput}
-                  className={loginStyle.loginInputStyle}
+                  className={loginStyle.loginInputPassStyle}
                 />
               </div>
               <div className="w-fit m-auto">

@@ -69,7 +69,7 @@ const SelectBtns = ({ numTracks, setSelected, selected }) => {
 
 const Cards = ({ testimonials, selected, setSelected }) => {
   return (
-    <div className="p-4 relative h-[450px] lg:h-[500px] shadow-xl">
+    <div className="p-4 relative h-[300px] lg:h-[300px] shadow-xl">
       {testimonials.map((t, i) => {
         return (
           <Card
@@ -150,7 +150,7 @@ const testimonials = [
   {
     description:
       "Website ini luar biasa dengan resep AI-nya yang kreatif dan mudah diikuti. Fitur pencarian berdasarkan bahan yang ada sangat praktis. Memasak menjadi lebih menyenangkan berkat inovasi ini!",
-    name: "Fajri Farid",
+    name: "Dani Sugeni",
     title: "Mahasiswa",
   },
   {

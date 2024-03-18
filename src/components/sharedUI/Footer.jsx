@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <div>
       <div className="h-[225px] bg-cw-background">
-        <div className="mx-40 flex justify-evenly">
+        <div className="flex justify-evenly">
           <div className="flex space-x-5 h-fit">
             <img src="/cw_logo.png" alt="" className="w-[40px] h-[56px] mt-5" />
             <div>
@@ -24,9 +24,9 @@ export const Footer = () => {
                 Exlplore Us
               </div>
               <div className="text-[40px] text-cw-secondary font-cookWiz flex flex-col -space-y-7 -mt-3">
-                <Link href={""}>About</Link>
-                <Link href={""}>Privacy Policy</Link>
-                <Link href={""}>Term & Conditions</Link>
+                <p>About</p>
+                <p>Privacy Policy</p>
+                <p>Term & Conditions</p>
               </div>
             </div>
             <div>
@@ -34,8 +34,8 @@ export const Footer = () => {
                 Connect Us
               </div>
               <div className="text-[40px] text-cw-secondary font-cookWiz flex flex-col -space-y-7 -mt-3">
-                <Link href={""}>support@bitwiz.com</Link>
-                <Link href={""}>265-2204-1406</Link>
+                <p>support@bitwiz.com</p>
+                <p>265-2204-1406</p>
                 <div>Bitwiz.Inc, Bandung</div>
               </div>
             </div>

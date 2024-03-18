@@ -10,7 +10,7 @@ const imgs = [
   "/carousel/food_5.jpg",
 ];
 
-const ONE_SECOND = 1000;
+const ONE_SECOND = 800;
 const AUTO_DELAY = ONE_SECOND * 10;
 const DRAG_BUFFER = 50;
 
@@ -54,7 +54,7 @@ export const SwipeCarousel = () => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-xl py-3 w-[564px] h-[900px] bg-cw-background ">
+    <div className="relative overflow-hidden rounded-xl py-3 w-[500px] h-[820px] bg-cw-background ">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -96,7 +96,7 @@ const Images = ({ imgIndex }) => {
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-video w-[564px] h-[846px] shrink-0 rounded-xl object-cover"
+            className="aspect-video w-[500px] h-[760px] shrink-0 rounded-xl object-cover"
           />
         );
       })}

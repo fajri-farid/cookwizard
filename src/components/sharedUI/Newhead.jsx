@@ -25,25 +25,29 @@ export const Newhead = async () => {
     <div>
       <div className="h-[80px] bg-cw-background">
         <div className="flex justify-between mx-40">
-          <div className="flex space-x-5 mt-2">
-            <div>
-              <img src="/cw_logo.png" alt="" className="w-[40px]" />
+          <Link href="/">
+            <div className="flex space-x-5 mt-2">
+              <div>
+                <img src="/cw_logo.png" alt="" className="w-[40px]" />
+              </div>{" "}
+              <div className="text-cw-primary font-cookWiz text-7xl">
+                Cook
+                <span className="text-cw-secondary font-cookWiz">Wizzard.</span>
+              </div>
             </div>
-            <div className="text-cw-primary font-cookWiz text-7xl">
-              Cook
-              <span className="text-cw-secondary font-cookWiz">Wizzard.</span>
-            </div>
-          </div>
+          </Link>
           <div className="flex space-x-10 mt-1">
             {isLoggedIn ? (
-              <Link href="/" className={HeaderStyle.submenu}>
-                Explore
-              </Link>
+              <div className="space-x-10">
+                <Link href="/generate-resep" className={HeaderStyle.submenu}>
+                  Generate Resep
+                </Link>
+                <Link href="/profile" className={HeaderStyle.submenu}>
+                  Profile
+                </Link>
+              </div>
             ) : (
               <div className="space-x-10">
-                <Link href="/" className={HeaderStyle.submenu}>
-                  Explore
-                </Link>
                 <Link href="/login" className={HeaderStyle.submenu}>
                   Login
                 </Link>

@@ -29,15 +29,23 @@
 }
 
 .textStyle {
-  @apply font-cookWiz text-[72px] text-cw-primary;
+  @apply font-cookWiz text-[70px] text-cw-primary;
+}
+
+.textPassword {
+  @apply font-cookWiz text-[60px] text-cw-primary;
 }
 
 .cardLayout {
   @apply w-[240px] h-[380px] bg-cw-secondary rounded-xl flex flex-col items-center;
 }
 .textQuestion {
-  @apply font-cookWiz text-[72px] text-cw-primary leading-10;
+  @apply font-cookWiz text-[70px] text-cw-primary leading-10 mb-10;
 }
 .textAnswer {
-  @apply font-cookWiz text-[72px] text-cw-primary leading-10 ml-10 mt-5 mb-10;
+  @apply font-cookWiz text-[60px] text-cw-primary leading-10 ml-10 mt-5 mb-10;
+}
+
+.texttest {
+  @apply text-[60px] font-cookWiz text-cw-primary;
 }
