@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { toast } from "react-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { siteUrl } from "@/config/siteUrl";
 
@@ -10,7 +10,6 @@ import { siteUrl } from "@/config/siteUrl";
 import loginStyle from "@/styles/compStyles/auth.module.css";
 
 export const Login = () => {
-  const router = useRouter();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -40,12 +39,12 @@ export const Login = () => {
       toast.error(errorMessage);
       return;
     }
-
     const { data, message } = await res.json();
     localStorage.setItem("user", JSON.stringify(data));
     // toast.success(message);
     // router.push("/");
-    window.location.replace(siteUrl);
+    toast.success("Login Berhasil");
+    // window.location.replace(siteUrl);
     console.log(data);
   }
 
@@ -106,6 +105,7 @@ export const Login = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </main>
   );
 };

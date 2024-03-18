@@ -1,6 +1,7 @@
 "use client";
 import { RequestCookiesAdapter } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export const GenerateResep = () => {
   const [resep, setResep] = useState(null);
@@ -70,6 +71,7 @@ export const GenerateResep = () => {
       // Periksa status respons
       if (res.ok) {
         console.log("Resep berhasil disimpan ke database");
+        toast.success("Resep Berhasil Disimpan!");
       } else {
         console.error("Gagal menyimpan resep ke database");
       }
@@ -104,8 +106,6 @@ export const GenerateResep = () => {
         </button>
       </form>
 
-      {loading && <p>Loading...</p>}
-
       {showResepDetails && resep && (
         <div>
           <h1 className="font-bold text-2xl">{resep.dishTitle}</h1>
@@ -136,6 +136,7 @@ export const GenerateResep = () => {
           </button>
         </div>
       )}
+      <Toaster />
     </main>
   );
 };

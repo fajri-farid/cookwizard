@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 //Styles
 import registerStyle from "@/styles/compStyles/auth.module.css";
 import { Footer } from "../sharedUI/Footer";
+import { useRouter } from "next/navigation";
 
 export const Register = () => {
+  const router = useRouter;
   const [registerData, setRegisterData] = useState({
     firstName: "",
     lastName: "",
@@ -26,6 +29,7 @@ export const Register = () => {
     const { firstName, lastName, username, email, password } = registerData;
 
     if (!firstName || !lastName || !username || !email || !password) {
+      toast.error("Pastikan Terisi Semua.");
       console.log("All fields must be filled");
       return; // di return supaya next codenya tidak di eksekusi
     }
@@ -34,8 +38,9 @@ export const Register = () => {
       method: "POST",
       body: JSON.stringify(registerData),
     });
-
+    toast.success("Register Berhasil!");
     const data = await res.json();
+    // router.push("/login");
     console.log(data);
   }
 
@@ -72,7 +77,7 @@ export const Register = () => {
                   />
                 </div>
                 <input
-                  name="Username"
+                  name="username"
                   placeholder="Username"
                   onChange={handleChangeInput}
                   className={registerStyle.inputStyle}
@@ -116,6 +121,7 @@ export const Register = () => {
         </div>
       </div>
       <Footer />
+      <Toaster />
     </main>
   );
 };
