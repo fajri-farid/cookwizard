@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export const GetUserData = () => {
   const [userData, setUserData] = useState(null);
@@ -37,6 +38,7 @@ export const GetUserData = () => {
       setUserData(updatedData.data);
       setEditing(false);
       console.log("berhasil update!");
+      toast.success("Profile Berhasil Diupdate!");
     } catch (error) {
       console.error("Error updating user data:", error);
     }
@@ -160,6 +162,7 @@ export const GetUserData = () => {
           <h2 className="font-bold text-xl">No user data available</h2>
         </div>
       )}
+      <Toaster />
     </div>
   );
 };
