@@ -34,3 +34,7 @@
 .loginInputStyle {
   @apply block w-[502px] input input-bordered border-2 border-cw-tertiary outline-none font-cookWiz text-[40px] focus:outline-none focus:border-cw-background duration-300;
 }
+
+.loginInputPassStyle {
+  @apply block w-[502px] input input-bordered border-2 border-cw-tertiary outline-none font-cookWiz text-[30px] focus:outline-none focus:border-cw-background duration-300;
+}

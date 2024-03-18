@@ -42,11 +42,11 @@ export const Register = () => {
   return (
     <main>
       <div>
-        <div className="w-fit flex space-x-32">
+        <div className="w-fit flex space-x-32 space-y-[100px]">
           <div>
-            <img src="/auth/img_register.png" alt="" className="w-[950px] " />
+            <img src="/auth/img_register.png" alt="" className="w-[1300px] " />
           </div>
-          <div className="w-[970px] flex align-middle">
+          <div className="w-[1000px] flex align-middle">
             <div className="w-fit m-auto">
               <div className="mb-5">
                 <div className="font-cookWiz text-cw-background text-8xl">
