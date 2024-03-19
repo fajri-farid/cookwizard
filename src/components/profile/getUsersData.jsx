@@ -158,8 +158,8 @@ export const GetUserData = () => {
           <div className="border border-black my-10  min-h-1 w-full bg-black max-w-[95vh]"></div>
         </div>
       ) : (
-        <div className="pt-10">
-          <h2 className="font-bold text-xl">No user data available</h2>
+        <div className="flex justify-center items-center mt-[30vh]">
+          <img src="/loading/loading.gif" alt="" className="w-[300px]" />
         </div>
       )}
       <Toaster />
