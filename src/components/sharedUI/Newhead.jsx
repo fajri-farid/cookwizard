@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { cookies } from "next/headers";
 import * as jose from "jose";
+import Image from "next/image";
 //Style
 import HeaderStyle from "@/styles/compStyles/header.module.css";
 import { LogoutButton } from "../logout";
@@ -30,7 +31,13 @@ export const Newhead = async () => {
           <Link href="/">
             <div className="flex space-x-5 mt-2">
               <div>
-                <img src="/cw_logo.png" alt="" className="w-[40px]" />
+                <Image
+                  src="/cw_logo.png"
+                  alt=""
+                  className="w-[40px]"
+                  width={500}
+                  height={300}
+                />
               </div>{" "}
               <div className="text-cw-primary font-cookWiz text-7xl">
                 Cook
