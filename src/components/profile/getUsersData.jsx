@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import profileStyle from "@/styles/compStyles/profile.module.css";
 
 export const GetUserData = () => {
   const [userData, setUserData] = useState(null);
@@ -9,21 +10,17 @@ export const GetUserData = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
   async function fetchData() {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       const id = user.id;
-
       const response = await fetch(`/api/v1/user?id=${id}`);
       const data = await response.json();
-
       setUserData(data.data);
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
   }
-
   // fungsi edit
   async function updateUser() {
     try {
@@ -43,13 +40,11 @@ export const GetUserData = () => {
       console.error("Error updating user data:", error);
     }
   }
-
   // Fungsi menangani perubahan input
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   }
-
   return (
     <div>
       {/* Memeriksa apakah userData bukan null */}
@@ -68,13 +63,15 @@ export const GetUserData = () => {
               </span>
             )}
           </div>
-          <p className="font-bold text-2xl">
+          <p className="font-bold font-cookWiz text-8xl">
             {userData.firstName} {userData.lastName}
           </p>
-          <p className="font-semibold text-xl">{userData.username}</p>
+          <p className="font-semibold font-cookWiz text-6xl">
+            {userData.username}
+          </p>
           {/* Menampilkan tanggal gabungan jika tersedia */}
           {userData.createdAt && (
-            <p className="text-sm">
+            <p className="font-cookWiz text-4xl">
               joined{" "}
               {new Date(userData.createdAt).toLocaleDateString("id-ID", {
                 day: "numeric",
@@ -83,7 +80,7 @@ export const GetUserData = () => {
               })}
             </p>
           )}
-          <p className="text-md">
+          <p className="font-cookWiz text-7xl">
             {userData.deskripsi
               ? userData.deskripsi
               : `Welcome to cookwizard ${userData.username}!`}
@@ -93,7 +90,7 @@ export const GetUserData = () => {
             <div>
               {/* Form untuk mengedit profil */}
               <form className="flex flex-col items-start w-full">
-                <div className="flex flex-col w-full my-2">
+                <div className="flex flex-col w-full my-2 space-y-3">
                   <label className="text-sm">First Name</label>
                   <input
                     type="text"
@@ -101,11 +98,11 @@ export const GetUserData = () => {
                     value={formData.firstName || userData.firstName}
                     onChange={handleInputChange}
                     placeholder="First Name"
-                    className="border border-gray-300 rounded-md p-2 w-full mt-1"
+                    className={profileStyle.inputStyle}
                   />
                 </div>
 
-                <div className="flex flex-col w-full my-2">
+                <div className="flex flex-col w-full my-2 space-y-3">
                   <label className="text-sm">Last Name</label>
                   <input
                     type="text"
@@ -113,11 +110,11 @@ export const GetUserData = () => {
                     value={formData.lastName || userData.lastName}
                     onChange={handleInputChange}
                     placeholder="Last Name"
-                    className="border border-gray-300 rounded-md p-2 w-full mt-1"
+                    className={profileStyle.inputStyle}
                   />
                 </div>
 
-                <div className="flex flex-col w-full my-2">
+                <div className="flex flex-col w-full my-2 space-y-3">
                   <label className="text-sm">Username</label>
                   <input
                     type="text"
@@ -125,32 +122,35 @@ export const GetUserData = () => {
                     value={formData.username || userData.username}
                     onChange={handleInputChange}
                     placeholder="Username"
-                    className="border border-gray-300 rounded-md p-2 w-full mt-1"
+                    className={profileStyle.inputStyle}
                   />
                 </div>
 
-                <div className="flex flex-col w-full my-2">
+                <div className="flex flex-col w-full my-2 space-y-3">
                   <label className="text-sm">Deskripsi</label>
                   <textarea
                     name="deskripsi"
                     value={formData.deskripsi || userData.deskripsi}
                     onChange={handleInputChange}
                     placeholder="Deskripsi"
-                    className="border border-gray-300 rounded-md p-2 w-full mt-1"
+                    className={profileStyle.inputStyle}
                   />
                 </div>
               </form>
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center mt-4">
                 <button
                   onClick={updateUser}
-                  className="flex flex-col justify-center bg-black text-white rounded-xl p-2"
+                  className={profileStyle.buttonStyle}
                 >
                   Simpan
                 </button>
               </div>
             </div>
           ) : (
-            <button onClick={() => setEditing(true)} className="my-2">
+            <button
+              onClick={() => setEditing(true)}
+              className="font-cookWiz text-[3rem] my-2 "
+            >
               Edit Profil
             </button>
           )}
