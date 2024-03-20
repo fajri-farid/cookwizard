@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <div className=" flex justify-center  items-center min-h-screen scbreakpoint:hidden">
-        <div>sorry, mobile version is under development👷</div>
+        <div>sorry, this version is under development👷</div>
       </div>
       <div className="hidden scbreakpoint:block">
         <Newhead />
