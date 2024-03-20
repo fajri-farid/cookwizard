@@ -4,9 +4,11 @@ import { cookies } from "next/headers";
 import * as jose from "jose";
 //Style
 import HeaderStyle from "@/styles/compStyles/header.module.css";
+import { LogoutButton } from "../logout";
 
 export const Newhead = async () => {
   let isLoggedIn = false;
+  // const router = useRouter;
 
   // logic untuk cek token
   const jwtSecret = process.env.JWT_SECRET;
@@ -45,6 +47,7 @@ export const Newhead = async () => {
                 <Link href="/profile" className={HeaderStyle.submenu}>
                   Profile
                 </Link>
+                <LogoutButton />
               </div>
             ) : (
               <div className="space-x-10">

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { siteUrl } from "@/config/siteUrl";
@@ -41,10 +40,8 @@ export const Login = () => {
     }
     const { data, message } = await res.json();
     localStorage.setItem("user", JSON.stringify(data));
-    // toast.success(message);
-    // router.push("/");
     toast.success("Login Berhasil");
-    // window.location.replace(siteUrl);
+    window.location.replace(siteUrl);
     console.log(data);
   }
 
