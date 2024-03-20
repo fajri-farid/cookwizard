@@ -122,8 +122,9 @@ const Card = ({
       className="absolute top-0 left-0 w-full min-h-full p-8 lg:p-12 cursor-pointer flex flex-col justify-between"
     >
       <p className="text-lg lg:text-xl font-light italic my-8">
-        "{description}"
+        &quot;{description}&quot;
       </p>
+
       <div>
         <span className="block font-semibold text-lg">{name}</span>
         <span className="block text-sm">{title}</span>
