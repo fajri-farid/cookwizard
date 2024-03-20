@@ -99,20 +99,24 @@ export const GenerateResep = () => {
 
       {showResepDetails && resep && (
         <div>
-          <h1 className="font-bold font-cookWiz text-7xl text-cw-background mt-20 mb-10">
+          <h1 className="font-bold font-cookWiz text-7xl text-cw-background -mt-[100px] mb-10">
             {resep.dishTitle}
           </h1>
           <p className="font-cookWiz text-[60px] leading-10">{resep.desc}</p>
           <div>
-            <h3 className="font-bold text-xl mt-5">Bahan:</h3>
+            <h3 className="font-cookWiz text-7xl font-bold mt-5">Bahan:</h3>
             {resep.ingredients.map((item, index) => (
-              <div key={index}>{item}</div>
+              <div key={index} className="font-cookWiz text-[60px] leading-10">
+                {item}
+              </div>
             ))}
           </div>
           <div>
-            <h3 className="font-bold text-xl mt-5">Tahapan:</h3>
+            <h3 className="font-cookWiz text-7xl font-bold mt-5">Tahapan:</h3>
             {resep.recipe.map((item, index) => (
-              <div key={index}>{item}</div>
+              <div key={index} className="font-cookWiz text-[60px] leading-10">
+                {item}
+              </div>
             ))}
           </div>
           <div className="w-fit m-auto space-x-10 my-20 flex">
