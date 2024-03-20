@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -8,7 +9,13 @@ export const Footer = () => {
       <div className="h-[225px] bg-cw-background">
         <div className="flex justify-evenly">
           <div className="flex space-x-5 h-fit">
-            <img src="/cw_logo.png" alt="" className="w-[40px] h-[56px] mt-5" />
+            <Image
+              src="/cw_logo.png"
+              alt=""
+              className="w-[40px] h-[56px] mt-5"
+              width={500}
+              height={300}
+            />
             <div>
               <div className="font-cookWiz text-cw-primary text-7xl">
                 Cook<span className="text-cw-secondary">Wizzard.</span>
