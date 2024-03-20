@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import recipeStyle from "@/styles/compStyles/profile.module.css";
 
 export const MyRecipeComponent = () => {
   const [recipes, setRecipes] = useState([]);
@@ -52,28 +53,39 @@ export const MyRecipeComponent = () => {
   };
 
   return (
-    <div>
-      <ul>
+    <div className="my-10">
+      <ul className="space-y-10">
         {recipes.map((recipe, index) => (
-          <li key={recipe.id} className="ml-[100px]">
-            <div className="pt-10">
-              <h2 className="font-bold text-xl">{recipe.dishTitle}</h2>
-              <p>{recipe.desc}</p>
-              <p className="mt-2">Bahan:</p>
+          <li
+            key={recipe.id}
+            className=" bg-cw-secondary w-[872px] m-auto p-5 rounded-xl"
+          >
+            <div>
+              <h2 className="font-cookWiz font-semibold text-7xl">
+                {recipe.dishTitle}
+              </h2>
+              <p className="font-cookWiz text-5xl">{recipe.desc}</p>
+              <p className="mt-5 font-cookWiz text-5xl leading-4">Bahan:</p>
               {recipe.ingredients.split(", ").map((ingredient, index) => (
-                <p key={index}>{ingredient}</p>
+                <p className="font-cookWiz text-5xl" key={index}>
+                  {ingredient}
+                </p>
               ))}
               {recipe.showDetails && (
                 <div>
-                  <p className="mt-2">Tahapan:</p>
+                  <p className="mt-10 font-cookWiz text-5xl leading-4">
+                    Tahapan:
+                  </p>
                   {recipe.recipe.split("\n").map((step, index) => (
-                    <p key={index}>{step}</p>
+                    <p className="font-cookWiz text-5xl" key={index}>
+                      {step}
+                    </p>
                   ))}
                 </div>
               )}
-              <div>
+              <div className="w-fit flex space-x-10 mt-5 ml-5">
                 <button
-                  className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  className={recipeStyle.buttonOnDetails}
                   onClick={() => toggleShowDetails(index)}
                 >
                   {recipe.showDetails
@@ -82,7 +94,7 @@ export const MyRecipeComponent = () => {
                 </button>
                 {recipe.showDetails && (
                   <button
-                    className="ml-10 mt-2 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    className={recipeStyle.buttonDelete}
                     onClick={() => handleDelete(recipe.id)}
                   >
                     Delete
