@@ -2,6 +2,7 @@
 import { RequestCookiesAdapter } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import generateRecipeStyle from "@/styles/compStyles/generateRecipe.module.css";
 
 export const GenerateResep = () => {
   const [resep, setResep] = useState(null);
@@ -87,53 +88,59 @@ export const GenerateResep = () => {
 
   return (
     <main className="max-w-3xl m-auto py-12 space-y-4">
-      <h1 className="font-bold text-3xl text-center">
+      <h1 className="font-semibold font-cookWiz text-9xl text-cw-background text-center mb-20">
         Generete Resep Apapun Disini!
       </h1>
-      <p>Masukkan bahan makanan disini</p>
-      <form action={handleGenerateResep}>
+      <p className="font-cookWiz text-6xl">Masukkan bahan makanan disini</p>
+      <form action={handleGenerateResep} className="space-y-10 h-[265px]">
         <input
           name="bahan"
           placeholder="seperti: ayam, telur, tomat"
-          className="block w-full input input-bordered"
+          className={generateRecipeStyle.inputStyle}
         />
-        <button
-          type="submit"
-          disabled={buttonDisabled}
-          className="mt-2 btn-md block w-full btn btn-primary"
-        >
-          Buat Resep
-        </button>
+        <div className="w-fit m-auto">
+          <button
+            type="submit"
+            disabled={buttonDisabled}
+            className={generateRecipeStyle.buttonStyle}
+          >
+            Buat Resep
+          </button>
+        </div>
       </form>
 
       {showResepDetails && resep && (
         <div>
-          <h1 className="font-bold text-2xl">{resep.dishTitle}</h1>
+          <h1 className="font-bold font-cookWiz text-7xl text-cw-background mt-20 mb-10">
+            {resep.dishTitle}
+          </h1>
           <p>{resep.desc}</p>
           <div>
-            <h3 className="font-bold text-xl">Bahan:</h3>
+            <h3 className="font-bold text-xl mt-5">Bahan:</h3>
             {resep.ingredients.map((item, index) => (
               <div key={index}>{item}</div>
             ))}
           </div>
           <div>
-            <h3 className="font-bold text-xl">Tahapan:</h3>
+            <h3 className="font-bold text-xl mt-5">Tahapan:</h3>
             {resep.recipe.map((item, index) => (
               <div key={index}>{item}</div>
             ))}
           </div>
-          <button
-            onClick={handleReset}
-            className="mt-2 btn-md block w-full btn btn-primary"
-          >
-            Buat Lagi
-          </button>
-          <button
-            onClick={handleSave}
-            className="mt-2 btn-md block w-full btn btn-primary"
-          >
-            Simpan Resep
-          </button>
+          <div className="w-fit m-auto space-x-10 my-20 flex">
+            <button
+              onClick={handleReset}
+              className={generateRecipeStyle.buttonDetails}
+            >
+              Buat Lagi
+            </button>
+            <button
+              onClick={handleSave}
+              className={generateRecipeStyle.buttonDetails}
+            >
+              Simpan Resep
+            </button>
+          </div>
         </div>
       )}
       <Toaster />

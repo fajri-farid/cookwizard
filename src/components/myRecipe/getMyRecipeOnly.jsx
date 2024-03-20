@@ -43,12 +43,12 @@ export const MyRecipeComponent = () => {
             <div className="pt-10">
               <h2 className="font-bold text-xl">{recipe.dishTitle}</h2>
               <p>{recipe.desc}</p>
+              <p className="mt-2">Bahan:</p>
+              {recipe.ingredients.split(", ").map((ingredient, index) => (
+                <p key={index}>{ingredient}</p>
+              ))}
               {recipe.showDetails && (
                 <div>
-                  <p className="mt-2">Bahan:</p>
-                  {recipe.ingredients.split(", ").map((ingredient, index) => (
-                    <p key={index}>{ingredient}</p>
-                  ))}
                   <p className="mt-2">Tahapan:</p>
                   {recipe.recipe.split("\n").map((step, index) => (
                     <p key={index}>{step}</p>
@@ -56,7 +56,9 @@ export const MyRecipeComponent = () => {
                 </div>
               )}
               <button
-                className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className={
+                  "mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                }
                 onClick={() => toggleShowDetails(index)}
               >
                 {recipe.showDetails ? "Sembunyikan Detail" : "Tampilkan Semua"}
