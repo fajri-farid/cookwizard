@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import Image from "next/image";
 
 export const GetUserData = () => {
   const [userData, setUserData] = useState(null);
@@ -57,10 +58,12 @@ export const GetUserData = () => {
         <div className="pt-10 flex flex-col items-center">
           <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full bg-gray-300 overflow-hidden">
             {userData.avatar ? (
-              <img
+              <Image
                 src={userData.avatar}
                 alt="Avatar"
                 className="w-full h-full object-cover"
+                width={500}
+                height={300}
               />
             ) : (
               <span className="text-gray-500 text-sm text-center">
@@ -159,7 +162,13 @@ export const GetUserData = () => {
         </div>
       ) : (
         <div className="flex justify-center items-center mt-[30vh]">
-          <img src="/loading/loading.gif" alt="" className="w-[300px]" />
+          <Image
+            src="/loading/loading.gif"
+            alt=""
+            className="w-[300px]"
+            width={500}
+            height={300}
+          />
         </div>
       )}
       <Toaster />
