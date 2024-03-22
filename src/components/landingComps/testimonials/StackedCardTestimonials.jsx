@@ -8,7 +8,7 @@ const StackedCardTestimonials = () => {
   return (
     <section className="bg-cw-secondary px-4 grid items-center grid-cols-1 gap-8 overflow-hidden">
       <div className="p-4">
-        <h3 className="text-[100px] text-cw-background font-cookWiz">
+        <h3 className="text-[40px] text-cw-background font-poppins">
           What our customers think
         </h3>
         <SelectBtns

@@ -1,7 +1,7 @@
 .buttonStyle {
   @apply ml-5 mt-5 relative z-0 flex items-center justify-center gap-2 overflow-hidden rounded-md border-[2px] w-[485px] h-[50px] 
   
-   border-[#C4C4C4] hover:border-cw-background bg-[#C4C4C4] px-4 py-2 font-cookWiz text-5xl
+   border-[#C4C4C4] hover:border-cw-background bg-[#C4C4C4] px-4 py-2 font-poppins text-[24px]
    text-cw-background transition-all duration-500
   
     
@@ -32,6 +32,14 @@
   @apply font-cookWiz text-[70px] text-cw-primary;
 }
 
+.textStyle2 {
+  @apply font-poppins text-[24px] text-cw-primary;
+}
+
+.textStyleCenter {
+  @apply font-poppins text-[32px] text-cw-primary text-center;
+}
+
 .textPassword {
   @apply font-cookWiz text-[60px] text-cw-primary;
 }
@@ -42,8 +50,17 @@
 .textQuestion {
   @apply font-cookWiz text-[70px] text-cw-primary leading-10 mb-10;
 }
+
+.textQuestion2 {
+  @apply font-poppins text-[32px] text-cw-primary leading-10 mb-8;
+}
+
 .textAnswer {
   @apply font-cookWiz text-[60px] text-cw-primary leading-10 ml-10 mt-5 mb-10;
+}
+
+.textAnswer2 {
+  @apply font-poppins text-[28px] text-cw-primary leading-10 ml-10 mt-1 mb-10;
 }
 
 .texttest {

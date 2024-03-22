@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         cookWiz: ["cookWiz", "cursive"],
+        poppins: ["poppins", "sans"],
       },
       colors: {
         "cw-background": "#261F1D",
