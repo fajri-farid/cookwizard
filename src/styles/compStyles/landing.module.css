@@ -32,6 +32,18 @@
   @apply font-cookWiz text-[70px] text-cw-primary;
 }
 
+.textStyle2 {
+  @apply font-poppins text-[24px] text-cw-primary;
+}
+
+.textStyleList {
+  @apply font-poppins text-[24px] text-cw-primary flex justify-between;
+}
+
+.textStyleCenter {
+  @apply font-poppins text-[32px] text-cw-primary text-center;
+}
+
 .textPassword {
   @apply font-cookWiz text-[60px] text-cw-primary;
 }
