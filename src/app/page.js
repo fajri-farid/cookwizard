@@ -18,7 +18,7 @@ export default function Home() {
         <div id="SECTION 1" className="mt-10">
           <div className="flex w-[1300px] m-auto justify-between">
             <div className="w-[750px]">
-              <div className="font-poppins font-semibold text-[80px] text-cw-primary mb-10">
+              <div className="font-poppins font-semibold text-[80px] text-cw-primary mb-10 mt-20">
                 <div>Your Personal Cooking Master</div>
               </div>
               <div className={landingStyle.textStyle2}>
@@ -29,7 +29,9 @@ export default function Home() {
                 </div>
                 <div className="ml-10 mt-10 mb-10">
                   <div className="mb-3">1.Keterbatasan Bahan</div>
-                  <div className="mb-3">2.Kekhawatiran tentang Varian Hidangan</div>
+                  <div className="mb-3">
+                    2.Kekhawatiran tentang Varian Hidangan
+                  </div>
                   <div className="mb-3">3.Kesulitan Memilih Menu Makanan</div>
                   <div className="mb-3">4.Kehabisan Ide untuk Masak Apa</div>
                 </div>
@@ -51,13 +53,13 @@ export default function Home() {
         ></div>
         <div id="SECTION 2">
           <div className="m-auto  w-[1300px]">
-              <div className={landingStyle.textStyleCenter}>
-                  <div className="font-poppins text-[38px] text-center mb-6">
-                  Bertanya Resep di CookWizard!
-                  </div>
+            <div className={landingStyle.textStyleCenter}>
+              <div className="font-poppins text-[50px] text-center mb-10 font-bold">
+                Tanyakan Resep di CookWizard!
               </div>
+            </div>
             <div className={landingStyle.textStyle}>
-              <div className="font-poppins text-[32px] text-center">
+              <div className="font-poppins text-[25px] text-center">
                 Kamu bingung mau masak apa? Gak masalah! CookWizard ada di sini
                 untuk bantu. Cukup ketik bahan yang kamu punya, dan CookWizard
                 bakal bantuin kamu bikin resep masakan dengan mudah.
@@ -73,19 +75,21 @@ export default function Home() {
               </div>
               <div className="ml-10">
                 <div className={landingStyle.textStyleList}>
-                    <div className="list-disc mb-20 mt-12">
-                      <li>Cari ide masakan dengan bahan yang ada di lemari dapurmu</li>
-                      <li>Simpan ide masakan yang udah kamu ciptain</li>
-                    </div>
-                    <div className="list-disc mb-20 mt-12">
-                      <li>Lihat resep-resep keren yang dibikin sama AI</li>
-                      <li>Dapetin inspirasi baru buat makananmu</li>
-                    </div>
+                  <div className="list-disc mb-20 mt-12">
+                    <li>
+                      Cari ide masakan dengan bahan yang ada di lemari dapurmu
+                    </li>
+                    <li>Simpan ide masakan yang udah kamu ciptain</li>
+                  </div>
+                  <div className="list-disc mb-20 mt-12">
+                    <li>Lihat resep-resep keren yang dibikin sama AI</li>
+                    <li>Dapetin inspirasi baru buat makananmu</li>
+                  </div>
                 </div>
               </div>
               <div className={landingStyle.textStyleCenter}>
-                Jadi, gak perlu pusing lagi mikirin masakan!<p/> CookWizard siap
-                bantu kamu.
+                Jadi, gak perlu pusing lagi mikirin masakan!
+                <p /> CookWizard siap bantu kamu.
               </div>
             </div>
           </div>
@@ -95,19 +99,7 @@ export default function Home() {
           className="m-auto w-[1300px] h-2 bg-cw-primary my-10"
         ></div>
         <div id="SECTION 3">
-          <div className="font-cookWiz text-[100px] text-cw-primary w-fit m-auto">
-            Why CookWizard
-          </div>
-          <div>
-            <WhyCard />
-          </div>
-        </div>
-        <div
-          id="SEPARATOR"
-          className="m-auto w-[1300px] h-2 bg-cw-primary my-10"
-        ></div>
-        <div id="SECTION 3">
-          <div className="font-poppins text-[100px] text-cw-primary text-center">
+          <div className="font-poppins text-[50px] text-cw-primary text-center mb-10">
             Why CookWizard
           </div>
           <div>
