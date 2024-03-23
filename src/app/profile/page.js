@@ -7,10 +7,10 @@ import React from "react";
 export default function page() {
   return (
     <main>
-      <div className=" flex justify-center  items-center min-h-screen scbreakpoint:hidden">
+      <div className="flex justify-center  items-center min-h-screen scbreakpoint:hidden">
         <div>sorry, mobile version is under development👷</div>
       </div>
-      <div className="hidden scbreakpoint:block">
+      <div className="hidden scbreakpoint:block min-h-full">
         <Newhead />
         <div>
           <GetUserData />
