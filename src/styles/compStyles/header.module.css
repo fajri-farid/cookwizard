@@ -1,0 +1,3 @@
+.submenu {
+  @apply font-cookWiz text-7xl text-cw-secondary hover:text-cw-tertiary;
+}

@@ -1,4 +1,14 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "cookwiz";
+  src: url(../static/font/cookWiz.woff2);
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url(../static/font/Poppins-Regular.ttf);
+}

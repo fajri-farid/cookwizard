@@ -1,0 +1,219 @@
+.inputStyle {
+  @apply block w-[600px] input input-bordered border-2 border-cw-tertiary outline-none font-poppins text-[18px] focus:outline-none focus:border-cw-background duration-300;
+}
+
+.buttonStyle {
+  @apply relative z-0 flex items-center justify-center gap-2 overflow-hidden rounded-md border-[2px] w-[580px] h-[50px] 
+  
+  
+  
+  
+         border-[#C4C4C4] hover:border-cw-background bg-[#C4C4C4] px-4 py-2 font-poppins text-[20px]
+         text-cw-background transition-all duration-500
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          before:absolute before:inset-0
+  
+  
+  
+  
+          before:-z-10 before:translate-x-[150%]
+  
+  
+  
+  
+          before:translate-y-[150%] before:scale-[2.5]
+  
+  
+  
+  
+          before:rounded-[100%] before:bg-cw-background
+  
+  
+  
+  
+          before:transition-transform before:duration-1000
+  
+  
+  
+  
+          before:content-[""]
+  
+  
+  
+  
+  
+  
+  
+  
+          hover:scale-105 hover:text-white
+  
+  
+  
+  
+          hover:before:translate-x-[0%]
+  
+  
+  
+  
+          hover:before:translate-y-[0%]
+  
+  
+  
+  
+          active:scale-95;
+}
+
+.buttonOnDetails {
+  @apply relative z-0 flex items-center justify-center gap-2 overflow-hidden rounded-md border-[2px] w-[280px] h-[50px] 
+  
+  
+  
+  
+           border-[#C4C4C4] hover:border-cw-background bg-[#C4C4C4] px-4 py-2 font-poppins text-[20px]
+           text-cw-background transition-all duration-500
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+            before:absolute before:inset-0
+  
+  
+  
+  
+            before:-z-10 before:translate-x-[150%]
+  
+  
+  
+  
+            before:translate-y-[150%] before:scale-[2.5]
+  
+  
+  
+  
+            before:rounded-[100%] before:bg-cw-background
+  
+  
+  
+  
+            before:transition-transform before:duration-1000
+  
+  
+  
+  
+            before:content-[""]
+  
+  
+  
+  
+  
+  
+  
+  
+            hover:scale-105 hover:text-white
+  
+  
+  
+  
+            hover:before:translate-x-[0%]
+  
+  
+  
+  
+            hover:before:translate-y-[0%]
+  
+  
+  
+  
+            active:scale-95;
+}
+
+.buttonDelete {
+  @apply relative z-0 flex items-center justify-center gap-2 overflow-hidden rounded-md border-[2px] w-[280px] h-[50px] 
+  
+  
+  
+  
+             border-[#C4C4C4] hover:border-red-500 bg-[#C4C4C4] px-4 py-2 font-poppins text-[20px]
+             text-cw-background transition-all duration-500
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+              before:absolute before:inset-0
+  
+  
+  
+  
+              before:-z-10 before:translate-x-[150%]
+  
+  
+  
+  
+              before:translate-y-[150%] before:scale-[2.5]
+  
+  
+  
+  
+              before:rounded-[100%] before:bg-red-500
+  
+  
+  
+  
+              before:transition-transform before:duration-1000
+  
+  
+  
+  
+              before:content-[""]
+  
+  
+  
+  
+  
+  
+  
+  
+              hover:scale-105 hover:text-white
+  
+  
+  
+  
+              hover:before:translate-x-[0%]
+  
+  
+  
+  
+              hover:before:translate-y-[0%]
+  
+  
+  
+  
+              active:scale-95;
+}
