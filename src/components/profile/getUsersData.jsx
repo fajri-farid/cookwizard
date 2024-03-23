@@ -50,19 +50,11 @@ export const GetUserData = () => {
       {/* Memeriksa apakah userData bukan null */}
       {userData ? (
         <div className="pt-10 flex flex-col items-center px-[23vw]">
-          <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full bg-gray-300 overflow-hidden">
-            {userData.avatar ? (
-              <img
-                src={userData.avatar}
-                alt="Avatar"
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <span className="text-gray-500 text-sm text-center">
-                No avatar
-              </span>
-            )}
-          </div>
+          <img
+            src="/PhotoProfile.png"
+            alt="Avatar"
+            className="object-cover w-[150px] h-[150px]"
+          />
           <p className="font-bold font-poppins text-3xl mt-3 mb-2">
             {userData.firstName} {userData.lastName}
           </p>

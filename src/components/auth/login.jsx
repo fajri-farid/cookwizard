@@ -47,20 +47,20 @@ export const Login = () => {
 
   return (
     <main>
-      <div className="w-fit flex space-x-32 space-y-[100px]">
+      <div className="w-fit flex space-x-32 space-y-[5vh]">
         <div>
           <img src="/auth/img_login.png" alt="" className="w-[1300px] " />
         </div>
         <div className="w-[1000px] flex align-middle">
           <div className="w-fit m-auto space-y-5">
             <div>
-              <h1 className="font-cookWiz text-cw-background text-8xl -mt-10">
+              <h1 className="font-poppins text-cw-background text-[40px] -mt-10">
                 Login
               </h1>
             </div>
-            <div className="space-y-10">
+            <div className="space-y-6">
               <div>
-                <div className="font-cookWiz text-cw-background text-6xl -mt-5">
+                <div className="font-poppins text-cw-background text-[24px] mt-5 mb-1">
                   Email Address
                 </div>
                 <input
@@ -70,19 +70,19 @@ export const Login = () => {
                   className={loginStyle.loginInputStyle}
                 />
               </div>
-              <div>
-                <div className="font-cookWiz text-cw-background text-6xl -mt-5">
+              <div className="mt-0">
+                <div className="font-poppins text-cw-background text-[24px] mt-4 mb-1">
                   Password
                 </div>
                 <input
                   name="password"
-                  placeholder="password"
+                  placeholder="Password"
                   type="password"
                   onChange={handleChangeInput}
                   className={loginStyle.loginInputPassStyle}
                 />
               </div>
-              <div className="w-fit m-auto">
+              <div className="m-auto">
                 <button
                   onClick={handleLogin}
                   className={loginStyle.buttonStyle}
@@ -92,10 +92,15 @@ export const Login = () => {
               </div>
             </div>
             <div>
-              <div className="font-cookWiz text-5xl">
+              <div className="font-poppins text-[1rem]">
                 Don&apos;t have an account ?{" "}
                 <Link href="/register" className="link">
                   <span>Register</span>
+                </Link>
+              </div>
+              <div className="w-fit m-auto mt-10 font-poppins text-[16px]">
+                <Link href="/" className="link">
+                  Back to Home
                 </Link>
               </div>
             </div>
