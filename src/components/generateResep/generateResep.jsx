@@ -76,11 +76,14 @@ export const GenerateResep = () => {
 
   return (
     <main className="max-w-3xl m-auto py-12 space-y-4">
-      <h1 className="font-semibold font-cookWiz text-9xl text-cw-background text-center mb-20">
-        Generete Resep Apapun Disini!
+      <h1 className="font-semibold font-poppins text-[3rem] text-cw-background text-center mb-10">
+        Generate Resep Apapun <br />
+        Disini!
       </h1>
-      <p className="font-cookWiz text-6xl">Masukkan bahan makanan disini</p>
-      <form action={handleGenerateResep} className="space-y-10 h-[265px]">
+      <p className="font-poppins text-[1.5rem]">
+        Masukkan bahan makananmu disini
+      </p>
+      <form action={handleGenerateResep} className="space-y-10 h-[25vh]">
         <input
           name="bahan"
           placeholder="seperti: ayam, telur, tomat"
@@ -99,22 +102,31 @@ export const GenerateResep = () => {
 
       {showResepDetails && resep && (
         <div>
-          <h1 className="font-bold font-cookWiz text-7xl text-cw-background -mt-[100px] mb-10">
+          <h1 className="font-bold font-poppins text-[2.2rem] text-cw-background mb-4 mt-1">
             {resep.dishTitle}
           </h1>
-          <p className="font-cookWiz text-[60px] leading-10">{resep.desc}</p>
+          <p className="font-poppins text-[1.2rem] leading-8 text-justify">
+            {resep.desc}
+          </p>
           <div>
-            <h3 className="font-cookWiz text-7xl font-bold mt-5">Bahan:</h3>
+            <h3 className="font-poppins text-[1.8rem] font-bold mt-5">
+              Bahan:
+            </h3>
             {resep.ingredients.map((item, index) => (
-              <div key={index} className="font-cookWiz text-[60px] leading-10">
+              <div key={index} className="font-poppins text-[1.2rem] leading-8">
                 {item}
               </div>
             ))}
           </div>
           <div>
-            <h3 className="font-cookWiz text-7xl font-bold mt-5">Tahapan:</h3>
+            <h3 className="font-poppins text-[1.8rem] font-bold mt-5">
+              Tahapan:
+            </h3>
             {resep.recipe.map((item, index) => (
-              <div key={index} className="font-cookWiz text-[60px] leading-10">
+              <div
+                key={index}
+                className="font-poppins text-[1.2rem] leading-10 text-justify"
+              >
                 {item}
               </div>
             ))}
