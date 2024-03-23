@@ -75,7 +75,7 @@ export const GenerateResep = () => {
   }
 
   return (
-    <main className="max-w-3xl m-auto py-12 space-y-4">
+    <main className="max-w-3xl m-auto py-10 space-y-4">
       <h1 className="font-semibold font-poppins text-[3rem] text-cw-background text-center mb-10">
         Generate Resep Apapun <br />
         Disini!
@@ -83,7 +83,7 @@ export const GenerateResep = () => {
       <p className="font-poppins text-[1.5rem]">
         Masukkan bahan makananmu disini
       </p>
-      <form action={handleGenerateResep} className="space-y-10 h-[25vh]">
+      <form action={handleGenerateResep} className="space-y-10 h-auto">
         <input
           name="bahan"
           placeholder="seperti: ayam, telur, tomat"
@@ -102,7 +102,7 @@ export const GenerateResep = () => {
 
       {showResepDetails && resep && (
         <div>
-          <h1 className="font-bold font-poppins text-[2.2rem] text-cw-background mb-4 mt-1">
+          <h1 className="font-bold font-poppins text-[2.2rem] text-cw-background mb-4 mt-10">
             {resep.dishTitle}
           </h1>
           <p className="font-poppins text-[1.2rem] leading-8 text-justify">
