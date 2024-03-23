@@ -9,7 +9,7 @@ import { Footer } from "../sharedUI/Footer";
 import { useRouter } from "next/navigation";
 
 export const Register = () => {
-  const router = useRouter;
+  const router = useRouter();
   const [registerData, setRegisterData] = useState({
     firstName: "",
     lastName: "",
@@ -40,24 +40,24 @@ export const Register = () => {
     });
     toast.success("Register Berhasil!");
     const data = await res.json();
-    // router.push("/login");
+    router.push("/login");
     console.log(data);
   }
 
   return (
     <main>
       <div>
-        <div className="w-fit flex space-x-32 space-y-[100px]">
+        <div className="w-fit flex space-x-32 space-y-[5vh]">
           <div>
             <img src="/auth/img_register.png" alt="" className="w-[1300px] " />
           </div>
           <div className="w-[1000px] flex align-middle">
             <div className="w-fit m-auto">
               <div className="mb-5">
-                <div className="font-cookWiz text-cw-background text-8xl">
+                <div className="font-poppins text-cw-background text-[40px]">
                   Register
                 </div>
-                <div className="font-cookWiz text-cw-background text-6xl -mt-5">
+                <div className="font-poppins text-cw-background text-[20px] mt-2">
                   Create an account for CookWizard.
                 </div>
               </div>
@@ -65,13 +65,13 @@ export const Register = () => {
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     name="firstName"
-                    placeholder="First name"
+                    placeholder="Firstname"
                     onChange={handleChangeInput}
                     className={registerStyle.inputStyle}
                   />
                   <input
                     name="lastName"
-                    placeholder="Last name"
+                    placeholder="Lastname"
                     onChange={handleChangeInput}
                     className={registerStyle.inputStyle}
                   />
@@ -104,13 +104,13 @@ export const Register = () => {
                 </div>
               </div>
               <div className="mt-5">
-                <div className="font-cookWiz text-5xl">
+                <div className="font-poppins text-[16px]">
                   Have an account ?{" "}
-                  <Link href="/login" className="link font-cookWiz text-5xl">
-                    <span className="font-cookWiz">Login</span>
+                  <Link href="/login" className="link font-poppins text-[16px]">
+                    <span className="font-poppins">Login</span>
                   </Link>
                 </div>
-                <div className="w-fit m-auto mt-10 font-cookWiz text-5xl">
+                <div className="w-fit m-auto mt-10 font-poppins text-[16px]">
                   <Link href="/" className="link">
                     Back to Home
                   </Link>

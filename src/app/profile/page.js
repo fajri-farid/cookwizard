@@ -7,18 +7,20 @@ import React from "react";
 export default function page() {
   return (
     <main>
-      <div className="flex justify-center  items-center min-h-screen scbreakpoint:hidden">
-        <div>sorry, mobile version is under development👷</div>
-      </div>
-      <div className="hidden scbreakpoint:block min-h-full">
-        <Newhead />
-        <div>
-          <GetUserData />
+      <div className="flex flex-col h-screen">
+        <div className="flex justify-center items-center min-h-screen scbreakpoint:hidden">
+          <div>sorry, mobile version is under development👷</div>
         </div>
-        <div>
-          <MyRecipeComponent />
+        <div className="flex flex-col flex-1 justify-between">
+          <Newhead />
+          <div>
+            <GetUserData />
+          </div>
+          <div>
+            <MyRecipeComponent />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     </main>
   );

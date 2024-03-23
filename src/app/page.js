@@ -84,7 +84,7 @@ export default function Home() {
                   </div>
                   <div className="list-disc mb-20 mt-12">
                     <li>Lihat resep-resep keren yang dibikin sama AI</li>
-                    <li>Dapetin inspirasi baru buat makananmu</li>
+                    <li>Dapatkan inspirasi baru buat makananmu</li>
                   </div>
                 </div>
               </div>

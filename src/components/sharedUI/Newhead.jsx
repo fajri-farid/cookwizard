@@ -34,7 +34,7 @@ export const Newhead = async () => {
               </div>{" "}
               <div className="text-cw-primary font-cookWiz text-7xl">
                 Cook
-                <span className="text-cw-secondary font-cookWiz">Wizzard.</span>
+                <span className="text-cw-secondary font-cookWiz">Wizard.</span>
               </div>
             </div>
           </Link>
