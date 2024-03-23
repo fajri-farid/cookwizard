@@ -98,6 +98,11 @@ export const Login = () => {
                   <span>Register</span>
                 </Link>
               </div>
+              <div className="w-fit m-auto mt-10 font-poppins text-[16px]">
+                <Link href="/" className="link">
+                  Back to Home
+                </Link>
+              </div>
             </div>
           </div>
         </div>
