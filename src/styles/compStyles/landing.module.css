@@ -37,11 +37,11 @@
 }
 
 .textStyleList {
-  @apply font-poppins text-[24px] text-cw-primary flex justify-between;
+  @apply font-poppins text-[20px] text-cw-primary flex justify-between;
 }
 
 .textStyleCenter {
-  @apply font-poppins text-[32px] text-cw-primary text-center;
+  @apply font-poppins text-[28px] text-cw-primary text-center;
 }
 
 .textPassword {
@@ -51,12 +51,22 @@
 .cardLayout {
   @apply w-[240px] h-[380px] bg-cw-secondary rounded-xl flex flex-col items-center;
 }
-.textQuestion {
+
+/* .textQuestion {
   @apply font-cookWiz text-[70px] text-cw-primary leading-10 mb-10;
+} */
+
+.textQuestion2 {
+  @apply font-poppins text-[28px] text-cw-primary leading-10 mb-4 font-bold;
 }
-.textAnswer {
+
+.textAnswer2 {
+  @apply font-poppins text-[20px] text-cw-primary leading-10 ml-4 mt-1 mb-10;
+}
+
+/* .textAnswer {
   @apply font-cookWiz text-[60px] text-cw-primary leading-10 ml-10 mt-5 mb-10;
-}
+} */
 
 .texttest {
   @apply text-[60px] font-cookWiz text-cw-primary;

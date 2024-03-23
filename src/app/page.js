@@ -18,8 +18,9 @@ export default function Home() {
         <div id="SECTION 1" className="mt-10">
           <div className="flex w-[1300px] m-auto justify-between">
             <div className="w-[750px]">
-              <div className="font-poppins font-semibold text-[80px] text-cw-primary mb-10 mt-20">
-                <div>Your Personal Cooking Master</div>
+              <div className="font-poppins font-semibold text-[60px] text-cw-primary mb-10 mt-20">
+                <div>Your Personal</div>
+                <div>Cooking Master</div>
               </div>
               <div className={landingStyle.textStyle2}>
                 <div className="mt-10">
@@ -59,7 +60,7 @@ export default function Home() {
               </div>
             </div>
             <div className={landingStyle.textStyle}>
-              <div className="font-poppins text-[25px] text-center">
+              <div className="font-poppins text-[20px] text-center">
                 Kamu bingung mau masak apa? Gak masalah! CookWizard ada di sini
                 untuk bantu. Cukup ketik bahan yang kamu punya, dan CookWizard
                 bakal bantuin kamu bikin resep masakan dengan mudah.
@@ -99,7 +100,7 @@ export default function Home() {
           className="m-auto w-[1300px] h-2 bg-cw-primary my-10"
         ></div>
         <div id="SECTION 3">
-          <div className="font-poppins text-[50px] text-cw-primary text-center mb-10">
+          <div className="font-poppins text-[50px] text-cw-primary text-center">
             Why CookWizard
           </div>
           <div>
