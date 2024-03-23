@@ -61,23 +61,25 @@ export const MyRecipeComponent = () => {
             className=" bg-cw-secondary w-[872px] m-auto p-5 rounded-xl"
           >
             <div>
-              <h2 className="font-cookWiz font-semibold text-7xl">
+              <h2 className="font-poppins font-semibold text-[1.5rem]">
                 {recipe.dishTitle}
               </h2>
-              <p className="font-cookWiz text-5xl">{recipe.desc}</p>
-              <p className="mt-5 font-cookWiz text-5xl leading-4">Bahan:</p>
+              <p className="font-popiins text-[1.2rem] mt-3">{recipe.desc}</p>
+              <p className="mt-5 font-poppins text-[1.3rem] leading-4">
+                Bahan:
+              </p>
               {recipe.ingredients.split(", ").map((ingredient, index) => (
-                <p className="font-cookWiz text-5xl" key={index}>
+                <p className="font-poppins text-[1.2rem] mt-2" key={index}>
                   {ingredient}
                 </p>
               ))}
               {recipe.showDetails && (
                 <div>
-                  <p className="mt-10 font-cookWiz text-5xl leading-4">
+                  <p className="mt-10 font-poppins text-[1.3rem] leading-4 mb-4">
                     Tahapan:
                   </p>
                   {recipe.recipe.split("\n").map((step, index) => (
-                    <p className="font-cookWiz text-5xl" key={index}>
+                    <p className="font-poppins text-[1.2rem] mb-2" key={index}>
                       {step}
                     </p>
                   ))}

@@ -28,8 +28,20 @@
     active:scale-95;
 }
 
-.textStyle {
+/* .textStyle {
   @apply font-cookWiz text-[70px] text-cw-primary;
+} */
+
+.textStyle2 {
+  @apply font-poppins text-[1.5rem] text-cw-primary;
+}
+
+.textStyleList {
+  @apply font-poppins text-[1.3rem] text-cw-primary flex justify-between;
+}
+
+.textStyleCenter {
+  @apply font-poppins text-[1.8rem] text-cw-primary text-center font-semibold;
 }
 
 .textPassword {
@@ -39,12 +51,22 @@
 .cardLayout {
   @apply w-[240px] h-[380px] bg-cw-secondary rounded-xl flex flex-col items-center;
 }
-.textQuestion {
+
+/* .textQuestion {
   @apply font-cookWiz text-[70px] text-cw-primary leading-10 mb-10;
+} */
+
+.textQuestion2 {
+  @apply font-poppins text-[1.8rem] text-cw-primary leading-10 mb-4 font-bold;
 }
-.textAnswer {
+
+.textAnswer2 {
+  @apply font-poppins text-[1.3rem] text-cw-primary leading-10 ml-4 mt-1 mb-10;
+}
+
+/* .textAnswer {
   @apply font-cookWiz text-[60px] text-cw-primary leading-10 ml-10 mt-5 mb-10;
-}
+} */
 
 .texttest {
   @apply text-[60px] font-cookWiz text-cw-primary;

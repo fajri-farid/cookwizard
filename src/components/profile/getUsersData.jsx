@@ -49,7 +49,7 @@ export const GetUserData = () => {
     <div>
       {/* Memeriksa apakah userData bukan null */}
       {userData ? (
-        <div className="pt-10 flex flex-col items-center">
+        <div className="pt-10 flex flex-col items-center px-[23vw]">
           <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full bg-gray-300 overflow-hidden">
             {userData.avatar ? (
               <img
@@ -63,15 +63,15 @@ export const GetUserData = () => {
               </span>
             )}
           </div>
-          <p className="font-bold font-cookWiz text-8xl">
+          <p className="font-bold font-poppins text-3xl mt-3 mb-2">
             {userData.firstName} {userData.lastName}
           </p>
-          <p className="font-semibold font-cookWiz text-6xl">
+          <p className="font-semibold font-poppins text-2xl mt-1">
             {userData.username}
           </p>
           {/* Menampilkan tanggal gabungan jika tersedia */}
           {userData.createdAt && (
-            <p className="font-cookWiz text-4xl">
+            <p className="font-poppins text-1xl">
               joined{" "}
               {new Date(userData.createdAt).toLocaleDateString("id-ID", {
                 day: "numeric",
@@ -80,7 +80,7 @@ export const GetUserData = () => {
               })}
             </p>
           )}
-          <p className="font-cookWiz text-7xl">
+          <p className="font-poppins text-xl mt-2 text-center">
             {userData.deskripsi
               ? userData.deskripsi
               : `Welcome to cookwizard ${userData.username}!`}
@@ -149,7 +149,7 @@ export const GetUserData = () => {
           ) : (
             <button
               onClick={() => setEditing(true)}
-              className="font-cookWiz text-[3rem] my-2 "
+              className="font-poppins text-[1.2rem] my-2 mt-4"
             >
               Edit Profil
             </button>
