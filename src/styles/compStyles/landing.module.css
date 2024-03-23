@@ -28,20 +28,20 @@
     active:scale-95;
 }
 
-.textStyle {
+/* .textStyle {
   @apply font-cookWiz text-[70px] text-cw-primary;
-}
+} */
 
 .textStyle2 {
-  @apply font-poppins text-[24px] text-cw-primary;
+  @apply font-poppins text-[1.5rem] text-cw-primary;
 }
 
 .textStyleList {
-  @apply font-poppins text-[20px] text-cw-primary flex justify-between;
+  @apply font-poppins text-[1.3rem] text-cw-primary flex justify-between;
 }
 
 .textStyleCenter {
-  @apply font-poppins text-[28px] text-cw-primary text-center;
+  @apply font-poppins text-[1.8rem] text-cw-primary text-center font-semibold;
 }
 
 .textPassword {
@@ -57,11 +57,11 @@
 } */
 
 .textQuestion2 {
-  @apply font-poppins text-[28px] text-cw-primary leading-10 mb-4 font-bold;
+  @apply font-poppins text-[1.8rem] text-cw-primary leading-10 mb-4 font-bold;
 }
 
 .textAnswer2 {
-  @apply font-poppins text-[20px] text-cw-primary leading-10 ml-4 mt-1 mb-10;
+  @apply font-poppins text-[1.3rem] text-cw-primary leading-10 ml-4 mt-1 mb-10;
 }
 
 /* .textAnswer {

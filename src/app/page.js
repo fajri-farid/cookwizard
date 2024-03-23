@@ -18,7 +18,7 @@ export default function Home() {
         <div id="SECTION 1" className="mt-10">
           <div className="flex w-[1300px] m-auto justify-between">
             <div className="w-[750px]">
-              <div className="font-poppins font-semibold text-[60px] text-cw-primary mb-10 mt-20">
+              <div className="font-poppins font-semibold text-[4rem] text-cw-primary mb-10 mt-[7rem]">
                 <div>Your Personal</div>
                 <div>Cooking Master</div>
               </div>
@@ -55,15 +55,15 @@ export default function Home() {
         <div id="SECTION 2">
           <div className="m-auto  w-[1300px]">
             <div className={landingStyle.textStyleCenter}>
-              <div className="font-poppins text-[50px] text-center mb-10 font-bold">
+              <div className="font-poppins text-[3rem] text-center mb-10 font-bold">
                 Tanyakan Resep di CookWizard!
               </div>
             </div>
             <div className={landingStyle.textStyle}>
-              <div className="font-poppins text-[20px] text-center">
+              <div className="font-poppins text-[1.3rem] text-center text-cw-primary">
                 Kamu bingung mau masak apa? Gak masalah! CookWizard ada di sini
-                untuk bantu. Cukup ketik bahan yang kamu punya, dan CookWizard
-                bakal bantuin kamu bikin resep masakan dengan mudah.
+                untuk bantu. Cukup ketik bahan yang <br /> kamu punya, dan
+                CookWizard bakal bantuin kamu bikin resep masakan dengan mudah.
               </div>
             </div>
             <img
@@ -100,7 +100,7 @@ export default function Home() {
           className="m-auto w-[1300px] h-2 bg-cw-primary my-10"
         ></div>
         <div id="SECTION 3">
-          <div className="font-poppins text-[50px] text-cw-primary text-center">
+          <div className="font-poppins text-[3rem] text-cw-primary text-center font-bold">
             Why CookWizard
           </div>
           <div>
@@ -122,7 +122,7 @@ export default function Home() {
         ></div>
         <div id="SECTION 5" className="mb-[100px]">
           <div className=" w-[1300px] m-auto">
-            <div className="font-poppins text-[52px] text-cw-primary text-center mb-12">
+            <div className="font-poppins text-[3rem] text-cw-primary text-center mb-12 font-bold">
               Pertanyaan Umum
             </div>
             <div>
