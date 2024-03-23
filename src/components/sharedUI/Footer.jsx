@@ -11,7 +11,7 @@ export const Footer = () => {
             <img src="/cw_logo.png" alt="" className="w-[40px] h-[56px] mt-5" />
             <div>
               <div className="font-cookWiz text-cw-primary text-7xl">
-                Cook<span className="text-cw-secondary">Wizzard.</span>
+                Cook<span className="text-cw-secondary">Wizard.</span>
               </div>
               <div className="-mt-7 font-cookWiz text-5xl text-cw-secondary">
                 Your Personal Cooking Master
