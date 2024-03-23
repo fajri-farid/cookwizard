@@ -9,7 +9,7 @@ import { Footer } from "../sharedUI/Footer";
 import { useRouter } from "next/navigation";
 
 export const Register = () => {
-  const router = useRouter;
+  const router = useRouter();
   const [registerData, setRegisterData] = useState({
     firstName: "",
     lastName: "",
@@ -40,7 +40,7 @@ export const Register = () => {
     });
     toast.success("Register Berhasil!");
     const data = await res.json();
-    // router.push("/login");
+    router.push("/login");
     console.log(data);
   }
 
