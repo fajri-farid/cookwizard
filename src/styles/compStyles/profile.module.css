@@ -2,6 +2,10 @@
   @apply block w-[600px] input input-bordered border-2 border-cw-tertiary outline-none font-poppins text-[18px] focus:outline-none focus:border-cw-background duration-300;
 }
 
+.inputStyleDeskripsi {
+  @apply block w-[600px] input input-bordered border-2 border-cw-tertiary outline-none font-poppins text-[18px] focus:outline-none focus:border-cw-background duration-300 h-[10rem];
+}
+
 .buttonStyle {
   @apply relative z-0 flex items-center justify-center gap-2 overflow-hidden rounded-md border-[2px] w-[580px] h-[50px] 
   
